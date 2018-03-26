@@ -14,12 +14,11 @@ namespace Kuznia
 {
     public partial class AddEditUserForm : Form
     {
-        private IClientRepository _repository;
+        private IRepository<Client> _repository;
         private BindingSource _bindingSource;
-        private readonly Client _clientToEdit;
         private readonly int _indexToEdit;
 
-        public AddEditUserForm(IClientRepository repository, BindingSource bindingSource)
+        public AddEditUserForm(IRepository<Client> repository, BindingSource bindingSource)
         {
             InitializeComponent();
             _repository = repository;
@@ -27,13 +26,12 @@ namespace Kuznia
             btnEdit.Enabled = false;
         }
 
-        public AddEditUserForm(IClientRepository repository, BindingSource bindingSource, Client client, int index)
+        public AddEditUserForm(IRepository<Client> repository, BindingSource bindingSource, Client client, int index)
         {
             InitializeComponent();
             _repository = repository;
             _bindingSource = bindingSource;
             button1.Enabled = false;
-            _clientToEdit = client;
             _indexToEdit = index;
 
             FillInputsWithClientData(client);
@@ -66,7 +64,7 @@ namespace Kuznia
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            _repository.UpdateClient(_indexToEdit, CreateClientFromInputs());
+            _repository.Update(_indexToEdit, CreateClientFromInputs());
             _bindingSource.ResetBindings(false);
             this.Close();
         }

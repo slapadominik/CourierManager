@@ -15,7 +15,7 @@ namespace Kuznia
 {
     public partial class AdminManagementForm : Form
     {
-        private IClientRepository _repository;
+        private IRepository<Client> _repository;
         private BindingSource _bindingSource;
 
         public AdminManagementForm()
@@ -23,7 +23,7 @@ namespace Kuznia
             InitializeComponent();
             _repository = new ClientRepository(new XMLSerializer<List<Client>>("Users.xml"));
             _bindingSource = new BindingSource();
-            _bindingSource.DataSource = _repository.GetClients();
+            _bindingSource.DataSource = _repository.GetAll();
 
             usersGridView.DataSource = _bindingSource;
         }
@@ -36,7 +36,7 @@ namespace Kuznia
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (_repository.GetClients().Count > 0)
+            if (_repository.GetAll().Count > 0)
             {
                 int index = usersGridView.CurrentCell.RowIndex;
                 _repository.Delete(index);
@@ -47,7 +47,7 @@ namespace Kuznia
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (_repository.GetClients().Count > 0)
+            if (_repository.GetAll().Count > 0)
             {
                 int index = usersGridView.CurrentCell.RowIndex;
                 Client client = _repository.Get(index);

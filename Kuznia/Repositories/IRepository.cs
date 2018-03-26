@@ -7,13 +7,12 @@ using Kuznia.Models;
 
 namespace Kuznia.Repositories
 {
-    public interface IClientRepository
+    public interface IRepository<T> where T : class
     {
-        void Add(Client client);
-        void Delete(Client client);
+        void Add(T t);
         void Delete(int index);
         Client Get(int index);
-        void UpdateClient(int index, Client client);
-        List<Client> GetClients();
+        void Update(int index, T t);
+        List<T> GetAll();
     }
 }

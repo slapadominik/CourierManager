@@ -71,11 +71,14 @@
     </Compile>
     <Compile Include="Helpers\ISerializer.cs" />
     <Compile Include="Helpers\XMLSerializer.cs" />
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ClientRepository.cs" />
-    <Compile Include="Repositories\IClientRepository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Services\AdminLoginService.cs" />
+    <Compile Include="Services\ILoginService.cs" />
     <EmbeddedResource Include="AddEditUserForm.resx">
       <DependentUpon>AddEditUserForm.cs</DependentUpon>
     </EmbeddedResource>

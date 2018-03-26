@@ -8,7 +8,7 @@ using Kuznia.Models;
 
 namespace Kuznia.Repositories
 {
-    public class ClientRepository : IClientRepository
+    public class ClientRepository : IRepository<Client>
     {
         private readonly ISerializer<List<Client>> _serliazer;
         private List<Client> _clients;
@@ -16,19 +16,13 @@ namespace Kuznia.Repositories
         public ClientRepository(ISerializer<List<Client>> serializer)
         {
             _serliazer = serializer;
-            InitializeClientsFromFile();
-            
+            InitializeClientsFromFile();           
         }
 
         public void Add(Client client)
         {
             _clients.Add(client);
             _serliazer.Serialize(_clients);
-        }
-
-        public void Delete(Client client)
-        {
-            throw new NotImplementedException();
         }
 
         public void Delete(int index)
@@ -38,7 +32,6 @@ namespace Kuznia.Repositories
             _clients.RemoveAt(index);
             _serliazer.Serialize(_clients);
         }
-
  
         public Client Get(int index)
         {
@@ -47,7 +40,7 @@ namespace Kuznia.Repositories
             return _clients[index];
         }
 
-        public void UpdateClient(int index, Client client)
+        public void Update(int index, Client client)
         {
             if (IndexOutOfBounds(index))
                 throw new IndexOutOfRangeException();
@@ -55,10 +48,12 @@ namespace Kuznia.Repositories
             _serliazer.Serialize(_clients);
         }
 
-        public List<Client> GetClients()
+        public List<Client> GetAll()
         {
             return _clients;
         }
+
+
 
         private void InitializeClientsFromFile()
         {

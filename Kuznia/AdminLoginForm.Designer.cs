@@ -37,11 +37,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(162, 286);
+            this.button1.Location = new System.Drawing.Point(160, 282);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Zaloguj";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // textBox1
@@ -63,18 +63,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(90, 173);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
+            this.label1.Text = "Login";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(93, 219);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
+            this.label2.Text = "Hasło";
             // 
             // AdminLoginForm
             // 
