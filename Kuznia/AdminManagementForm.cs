@@ -30,11 +30,30 @@ namespace Kuznia
 
         private void btnAddClient_Click(object sender, EventArgs e)
         {
-            AddUserForm addUserForm = new AddUserForm(_repository, _bindingSource);
+            AddEditUserForm addUserForm = new AddEditUserForm(_repository, _bindingSource);
             addUserForm.Show();           
         }
 
-        
-     
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (_repository.GetClients().Count > 0)
+            {
+                int index = usersGridView.CurrentCell.RowIndex;
+                _repository.Delete(index);
+                _bindingSource.ResetBindings(false);
+            }
+            
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (_repository.GetClients().Count > 0)
+            {
+                int index = usersGridView.CurrentCell.RowIndex;
+                Client client = _repository.Get(index);
+                AddEditUserForm addUserForm = new AddEditUserForm(_repository, _bindingSource, client, index);
+                addUserForm.Show();
+            }
+        }
     }
 }
