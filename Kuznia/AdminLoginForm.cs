@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace Kuznia
 {
-    public partial class Form1 : Form
+    public partial class AdminLoginForm : Form
     {
-        public Form1()
+        public AdminLoginForm()
         {
             InitializeComponent();
-        }
-
-        private void btnAdminRole_Click(object sender, EventArgs e)
-        {
-            AdminLoginForm form = new AdminLoginForm();
-            form.Show();
-            this.Hide();
         }
     }
 }
