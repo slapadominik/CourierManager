@@ -1,3 +1,4 @@
-# Kuznia
+# CourierManager
 
-change1
+Desktop application written in C#, excersise for KuŸnia Rewelacyjnych Developerów.
+
