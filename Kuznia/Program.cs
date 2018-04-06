@@ -18,7 +18,7 @@ namespace Kuznia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminManagementForm());
+            Application.Run(new MenuForm());
         }
     }
 }

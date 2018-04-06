@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Kuznia.Services
 {
-    interface ILoginService<T> where T : class
+    public interface ILoginService<T> where T : class
     {
-        void Login(T t);
+        T Login(T t);
 
     }
 }

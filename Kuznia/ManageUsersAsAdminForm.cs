@@ -13,12 +13,12 @@ using Kuznia.Repositories;
 
 namespace Kuznia
 {
-    public partial class AdminManagementForm : Form
+    public partial class ManageUsersAsAdminForm : Form
     {
         private IRepository<Client> _repository;
         private BindingSource _bindingSource;
 
-        public AdminManagementForm()
+        public ManageUsersAsAdminForm()
         {
             InitializeComponent();
             _repository = new ClientRepository(new XMLSerializer<List<Client>>("Users.xml"));
@@ -54,6 +54,13 @@ namespace Kuznia
                 AddEditUserForm addUserForm = new AddEditUserForm(_repository, _bindingSource, client, index);
                 addUserForm.Show();
             }
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            MenuForm menuForm = new MenuForm();
+            menuForm.Show();
+            this.Hide();
         }
     }
 }
