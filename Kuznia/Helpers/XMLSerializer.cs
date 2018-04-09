@@ -16,7 +16,7 @@ namespace Kuznia.Helpers
         public XMLSerializer(string fileName = "SerializedXML")
         {
             _serializer = new XmlSerializer(typeof(T));
-            FileName = fileName;
+            FileName = Constants.BASE_FILE_PATH + fileName;
         }
 
         public void Serialize(T t)

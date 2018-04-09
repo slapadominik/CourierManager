@@ -45,36 +45,68 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEditUserForm.cs">
+    <Compile Include="Constants.cs" />
+    <Compile Include="Helpers\EnumMapper.cs" />
+    <Compile Include="Helpers\Extensions\ListExtensions.cs" />
+    <Compile Include="Helpers\ModelsMapper.cs" />
+    <Compile Include="Models\Enums\PackageStatus.cs" />
+    <Compile Include="Models\Package.cs" />
+    <Compile Include="Repositories\PackageRepository.cs" />
+    <Compile Include="ViewModels\PackageViewModel.cs" />
+    <Compile Include="Views\AddEditPackageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddEditUserForm.Designer.cs">
+    <Compile Include="Views\AddEditPackageForm.Designer.cs">
+      <DependentUpon>AddEditPackageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddEditUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddEditUserForm.Designer.cs">
       <DependentUpon>AddEditUserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminLoginForm.cs">
+    <Compile Include="Views\AdminLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminLoginForm.Designer.cs">
+    <Compile Include="Views\AdminLoginForm.Designer.cs">
       <DependentUpon>AdminLoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageUsersAsAdminForm.cs">
+    <Compile Include="Views\ClientPackageStatusForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManageUsersAsAdminForm.Designer.cs">
+    <Compile Include="Views\ClientPackageStatusForm.Designer.cs">
+      <DependentUpon>ClientPackageStatusForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ClientMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ClientMenuForm.Designer.cs">
+      <DependentUpon>ClientMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CourierManagePackageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CourierManagePackageForm.Designer.cs">
+      <DependentUpon>CourierManagePackageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CourierMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CourierMenuForm.Designer.cs">
+      <DependentUpon>CourierMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ManageUsersAsAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ManageUsersAsAdminForm.Designer.cs">
       <DependentUpon>ManageUsersAsAdminForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ISerializer.cs" />
     <Compile Include="Helpers\XMLSerializer.cs" />
-    <Compile Include="MenuForm.cs">
+    <Compile Include="Views\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuForm.Designer.cs">
+    <Compile Include="Views\MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs" />
@@ -85,19 +117,32 @@
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Services\AdminLoginService.cs" />
     <Compile Include="Services\ILoginService.cs" />
-    <EmbeddedResource Include="AddEditUserForm.resx">
+    <EmbeddedResource Include="Views\AddEditPackageForm.resx">
+      <DependentUpon>AddEditPackageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddEditUserForm.resx">
       <DependentUpon>AddEditUserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminLoginForm.resx">
+    <EmbeddedResource Include="Views\AdminLoginForm.resx">
       <DependentUpon>AdminLoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageUsersAsAdminForm.resx">
+    <EmbeddedResource Include="Views\ClientPackageStatusForm.resx">
+      <DependentUpon>ClientPackageStatusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ClientMenuForm.resx">
+      <DependentUpon>ClientMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CourierManagePackageForm.resx">
+      <DependentUpon>CourierManagePackageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CourierMenuForm.resx">
+      <DependentUpon>CourierMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ManageUsersAsAdminForm.resx">
       <DependentUpon>ManageUsersAsAdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MenuForm.resx">
+    <EmbeddedResource Include="Views\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

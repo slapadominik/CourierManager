@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfClient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Client>
+    <FirstName>Jan</FirstName>
+    <LastName>Zamojski</LastName>
+    <City>Poznań</City>
+    <Street>Wawelska 3/4</Street>
+    <Status>None</Status>
+  </Client>
+</ArrayOfClient>

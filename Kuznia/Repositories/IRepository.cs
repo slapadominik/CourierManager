@@ -11,7 +11,7 @@ namespace Kuznia.Repositories
     {
         void Add(T t);
         void Delete(int index);
-        Client Get(int index);
+        T Get(int index);
         void Update(int index, T t);
         List<T> GetAll();
     }

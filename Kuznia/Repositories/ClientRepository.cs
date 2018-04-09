@@ -16,7 +16,7 @@ namespace Kuznia.Repositories
         public ClientRepository(ISerializer<List<Client>> serializer)
         {
             _serliazer = serializer;
-            InitializeClientsFromFile();           
+            InitializeClientsFromFile();
         }
 
         public void Add(Client client)

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kuznia.Views;
 
 namespace Kuznia
 {
@@ -21,6 +22,20 @@ namespace Kuznia
         {
             AdminLoginForm adminLoginForm = new AdminLoginForm();
             adminLoginForm.Show();
+            this.Hide();
+        }
+
+        private void btnCourier_Click(object sender, EventArgs e)
+        {
+            CourierMenuForm courierMenuForm = new CourierMenuForm();
+            courierMenuForm.Show();
+            this.Hide();
+        }
+
+        private void btnClient_Click(object sender, EventArgs e)
+        {
+            ClientMenuForm clientMenuForm = new ClientMenuForm();
+            clientMenuForm.Show();
             this.Hide();
         }
     }
