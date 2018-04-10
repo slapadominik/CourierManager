@@ -23,7 +23,7 @@ namespace Kuznia
             InitializeComponent();
             _repository = new ClientRepository(new XMLSerializer<List<Client>>("Users.xml"));
             _bindingSource = new BindingSource();
-            _bindingSource.DataSource = _repository.GetAll();
+            _bindingSource.DataSource = _repository.GetAll().MapClientsToViewModel();
 
             usersGridView.DataSource = _bindingSource;
         }
@@ -40,7 +40,7 @@ namespace Kuznia
             {
                 int index = usersGridView.CurrentCell.RowIndex;
                 _repository.Delete(index);
-                _bindingSource.ResetBindings(false);
+                RefreshDataSource();
             }
             
         }
@@ -62,5 +62,31 @@ namespace Kuznia
             menuForm.Show();
             this.Hide();
         }
+
+        private void btnStatus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RefreshDataSource()
+        {
+            _bindingSource.Clear();
+            _bindingSource.DataSource = _repository.GetAll().MapClientsToViewModel();
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            switch (m.Msg)
+            {
+                case 0x84:
+                    base.WndProc(ref m);
+                    if ((int)m.Result == 0x1)
+                        m.Result = (IntPtr)0x2;
+                    return;
+            }
+
+            base.WndProc(ref m);
+        }
+
     }
 }

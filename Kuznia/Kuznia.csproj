@@ -52,6 +52,7 @@
     <Compile Include="Models\Enums\PackageStatus.cs" />
     <Compile Include="Models\Package.cs" />
     <Compile Include="Repositories\PackageRepository.cs" />
+    <Compile Include="ViewModels\ClientViewModel.cs" />
     <Compile Include="ViewModels\PackageViewModel.cs" />
     <Compile Include="Views\AddEditPackageForm.cs">
       <SubType>Form</SubType>

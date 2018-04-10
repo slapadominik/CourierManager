@@ -23,6 +23,7 @@ namespace Kuznia
             InitializeComponent();
             _loginService = new AdminLoginService(new XMLSerializer<List<Admin>>("Admins.xml"));
             labelResult.Hide();
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -31,7 +32,7 @@ namespace Kuznia
             if (_loginService.Login(admin) == null)
             {
                 labelResult.Show();
-                labelResult.Text = "Nie udalo sie zalogować :(";
+                labelResult.Text = "Nie udalo sie zalogować";
             }
             else
             {

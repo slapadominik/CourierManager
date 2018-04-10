@@ -46,42 +46,49 @@ namespace Kuznia.Views
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 144);
+            this.label1.Location = new System.Drawing.Point(57, 244);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.Size = new System.Drawing.Size(131, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Numer paczki";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 206);
+            this.label2.Location = new System.Drawing.Point(58, 349);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.Size = new System.Drawing.Size(129, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Status paczki";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 263);
+            this.label3.Location = new System.Drawing.Point(57, 446);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 13);
+            this.label3.Size = new System.Drawing.Size(169, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Data dostarczenia";
             // 
             // txtBoxPackageId
             // 
-            this.txtBoxPackageId.Location = new System.Drawing.Point(153, 141);
+            this.txtBoxPackageId.Location = new System.Drawing.Point(256, 239);
+            this.txtBoxPackageId.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtBoxPackageId.Name = "txtBoxPackageId";
-            this.txtBoxPackageId.Size = new System.Drawing.Size(110, 20);
+            this.txtBoxPackageId.Size = new System.Drawing.Size(181, 30);
             this.txtBoxPackageId.TabIndex = 3;
             // 
             // btnAddPackage
             // 
-            this.btnAddPackage.Location = new System.Drawing.Point(273, 332);
+            this.btnAddPackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPackage.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAddPackage.Location = new System.Drawing.Point(456, 562);
+            this.btnAddPackage.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAddPackage.Name = "btnAddPackage";
-            this.btnAddPackage.Size = new System.Drawing.Size(75, 23);
+            this.btnAddPackage.Size = new System.Drawing.Size(124, 39);
             this.btnAddPackage.TabIndex = 6;
             this.btnAddPackage.Text = "Dodaj";
             this.btnAddPackage.UseVisualStyleBackColor = true;
@@ -89,33 +96,40 @@ namespace Kuznia.Views
             // 
             // btnEditPackage
             // 
-            this.btnEditPackage.Location = new System.Drawing.Point(273, 380);
+            this.btnEditPackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditPackage.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEditPackage.Location = new System.Drawing.Point(456, 644);
+            this.btnEditPackage.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnEditPackage.Name = "btnEditPackage";
-            this.btnEditPackage.Size = new System.Drawing.Size(75, 23);
+            this.btnEditPackage.Size = new System.Drawing.Size(124, 39);
             this.btnEditPackage.TabIndex = 7;
             this.btnEditPackage.Text = "Edytuj";
             this.btnEditPackage.UseVisualStyleBackColor = true;
+            this.btnEditPackage.Click += new System.EventHandler(this.btnEditPackage_Click);
             // 
             // dateTimePicker
             // 
-            this.dateTimePicker.Location = new System.Drawing.Point(153, 255);
+            this.dateTimePicker.Location = new System.Drawing.Point(256, 440);
+            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker.Size = new System.Drawing.Size(331, 30);
             this.dateTimePicker.TabIndex = 9;
             // 
             // comboBoxStatus
             // 
             this.comboBoxStatus.FormattingEnabled = true;
-            this.comboBoxStatus.Location = new System.Drawing.Point(153, 206);
+            this.comboBoxStatus.Location = new System.Drawing.Point(256, 349);
+            this.comboBoxStatus.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.comboBoxStatus.Name = "comboBoxStatus";
-            this.comboBoxStatus.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxStatus.Size = new System.Drawing.Size(200, 33);
             this.comboBoxStatus.TabIndex = 10;
             // 
             // AddEditPackageForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(386, 448);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.ClientSize = new System.Drawing.Size(643, 758);
             this.Controls.Add(this.comboBoxStatus);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.btnEditPackage);
@@ -124,8 +138,11 @@ namespace Kuznia.Views
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "AddEditPackageForm";
-            this.Text = "AddEditPackageForm";
+            this.Text = "DPD - firma kurierska";
             this.ResumeLayout(false);
             this.PerformLayout();
 

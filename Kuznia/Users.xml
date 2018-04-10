@@ -1,10 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfClient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Client>
-    <FirstName>Jan</FirstName>
+    <FirstName>Karol</FirstName>
     <LastName>Zamojski</LastName>
     <City>Poznań</City>
     <Street>Wawelska 3/4</Street>
+    <Status>Delivered</Status>
+  </Client>
+  <Client>
+    <FirstName>Monika</FirstName>
+    <LastName>Majec</LastName>
+    <City>Gdańsk</City>
+    <Street>Chabrowa 21c/12</Street>
+    <Status>None</Status>
+  </Client>
+  <Client>
+    <FirstName>Oskar</FirstName>
+    <LastName>Kwiatkowski</LastName>
+    <City>Wrocław</City>
+    <Street>Radkowksa 21</Street>
+    <Status>None</Status>
+  </Client>
+  <Client>
+    <FirstName>Małgorzata</FirstName>
+    <LastName>Krawiec</LastName>
+    <City>Wrocław</City>
+    <Street>Rudzka</Street>
+    <Status>OnTheWay</Status>
+  </Client>
+  <Client>
+    <FirstName>Krzysztof</FirstName>
+    <LastName>Krawczyk</LastName>
+    <City>Warszawa</City>
+    <Street>Majowa 4</Street>
+    <Status>InWarehouse</Status>
+  </Client>
+  <Client>
+    <FirstName>Kamila</FirstName>
+    <LastName>Stańczuk</LastName>
+    <City>Wrocław</City>
+    <Street>Śliczna 14c</Street>
+    <Status>InSystem</Status>
+  </Client>
+  <Client>
+    <FirstName>Kamil</FirstName>
+    <LastName>Wojtkiewicz</LastName>
+    <City>Kraków</City>
+    <Street>Wawelska 13a/5</Street>
+    <Status>None</Status>
+  </Client>
+  <Client>
+    <FirstName>Józef</FirstName>
+    <LastName>Wielki</LastName>
+    <City>Poznań</City>
+    <Street>Krakowska 38</Street>
     <Status>None</Status>
   </Client>
 </ArrayOfClient>

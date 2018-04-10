@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnChangeStatus = new System.Windows.Forms.Button();
             this.dataGridViewPackages = new System.Windows.Forms.DataGridView();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnAddPackage = new System.Windows.Forms.Button();
@@ -37,29 +36,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPackages)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnChangeStatus
-            // 
-            this.btnChangeStatus.Location = new System.Drawing.Point(451, 46);
-            this.btnChangeStatus.Name = "btnChangeStatus";
-            this.btnChangeStatus.Size = new System.Drawing.Size(101, 37);
-            this.btnChangeStatus.TabIndex = 0;
-            this.btnChangeStatus.Text = "Zmień status";
-            this.btnChangeStatus.UseVisualStyleBackColor = true;
-            this.btnChangeStatus.Click += new System.EventHandler(this.btnChangeStatus_Click);
-            // 
             // dataGridViewPackages
             // 
+            this.dataGridViewPackages.AllowUserToAddRows = false;
+            this.dataGridViewPackages.AllowUserToDeleteRows = false;
             this.dataGridViewPackages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPackages.Location = new System.Drawing.Point(100, 119);
+            this.dataGridViewPackages.Location = new System.Drawing.Point(123, 173);
+            this.dataGridViewPackages.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridViewPackages.Name = "dataGridViewPackages";
-            this.dataGridViewPackages.Size = new System.Drawing.Size(452, 383);
+            this.dataGridViewPackages.Size = new System.Drawing.Size(567, 516);
             this.dataGridViewPackages.TabIndex = 1;
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(539, 557);
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.Location = new System.Drawing.Point(570, 712);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(80, 35);
+            this.btnReturn.Size = new System.Drawing.Size(120, 54);
             this.btnReturn.TabIndex = 2;
             this.btnReturn.Text = "Powrót";
             this.btnReturn.UseVisualStyleBackColor = true;
@@ -67,9 +61,11 @@
             // 
             // btnAddPackage
             // 
-            this.btnAddPackage.Location = new System.Drawing.Point(100, 46);
+            this.btnAddPackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPackage.Location = new System.Drawing.Point(123, 71);
+            this.btnAddPackage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAddPackage.Name = "btnAddPackage";
-            this.btnAddPackage.Size = new System.Drawing.Size(98, 36);
+            this.btnAddPackage.Size = new System.Drawing.Size(166, 65);
             this.btnAddPackage.TabIndex = 3;
             this.btnAddPackage.Text = "Dodaj paczkę";
             this.btnAddPackage.UseVisualStyleBackColor = true;
@@ -77,9 +73,11 @@
             // 
             // btnDeletePackage
             // 
-            this.btnDeletePackage.Location = new System.Drawing.Point(221, 46);
+            this.btnDeletePackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeletePackage.Location = new System.Drawing.Point(324, 71);
+            this.btnDeletePackage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDeletePackage.Name = "btnDeletePackage";
-            this.btnDeletePackage.Size = new System.Drawing.Size(96, 36);
+            this.btnDeletePackage.Size = new System.Drawing.Size(160, 65);
             this.btnDeletePackage.TabIndex = 4;
             this.btnDeletePackage.Text = "Usuń paczkę";
             this.btnDeletePackage.UseVisualStyleBackColor = true;
@@ -87,9 +85,11 @@
             // 
             // btnEditPackage
             // 
-            this.btnEditPackage.Location = new System.Drawing.Point(336, 46);
+            this.btnEditPackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditPackage.Location = new System.Drawing.Point(528, 71);
+            this.btnEditPackage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEditPackage.Name = "btnEditPackage";
-            this.btnEditPackage.Size = new System.Drawing.Size(91, 36);
+            this.btnEditPackage.Size = new System.Drawing.Size(162, 65);
             this.btnEditPackage.TabIndex = 5;
             this.btnEditPackage.Text = "Edytuj paczkę";
             this.btnEditPackage.UseVisualStyleBackColor = true;
@@ -97,25 +97,26 @@
             // 
             // CourierManagePackageForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 604);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.ClientSize = new System.Drawing.Size(828, 780);
             this.Controls.Add(this.btnEditPackage);
             this.Controls.Add(this.btnDeletePackage);
             this.Controls.Add(this.btnAddPackage);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.dataGridViewPackages);
-            this.Controls.Add(this.btnChangeStatus);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "CourierManagePackageForm";
-            this.Text = "CourierManagePackageForm";
+            this.Text = "DPD - firma kurierska";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPackages)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnChangeStatus;
         private System.Windows.Forms.DataGridView dataGridViewPackages;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnAddPackage;

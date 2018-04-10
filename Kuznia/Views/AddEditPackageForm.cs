@@ -31,13 +31,15 @@ namespace Kuznia.Views
             initComboBox();
         }
 
-        public AddEditPackageForm(IRepository<Package> repository, BindingSource bindingSource, Package client, int index)
+        public AddEditPackageForm(IRepository<Package> repository, BindingSource bindingSource, Package package, int index)
         {
             InitializeComponent();
             _repository = repository;
             _bindingSource = bindingSource;
-            btnEditPackage.Enabled = false;
+            _indexToEdit = index;
+            btnAddPackage.Enabled = false;
             initComboBox();
+            FillInputsWithPackageData(package);
         }
 
         private void btnAddPackage_Click(object sender, EventArgs e)
@@ -78,8 +80,15 @@ namespace Kuznia.Views
 
         private void FillInputsWithPackageData(Package package)
         {
-            
+            txtBoxPackageId.Text = package.PackageId.ToString();
+            dateTimePicker.Value = package.DeliveryDateTime;
         }
 
+        private void btnEditPackage_Click(object sender, EventArgs e)
+        {
+            _repository.Update(_indexToEdit, CreatePackageFromInputs());
+            _bindingSource.DataSource = _repository.GetAll().MapPackagesToViewModel();
+            this.Close();
+        }
     }
 }

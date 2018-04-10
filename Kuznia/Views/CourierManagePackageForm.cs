@@ -44,17 +44,40 @@ namespace Kuznia.Views
 
         private void btnDeletePackage_Click(object sender, EventArgs e)
         {
-
+            if (ContainsAnyData())
+            {
+                int index = dataGridViewPackages.CurrentCell.RowIndex;
+                _repository.Delete(index);
+                RefreshDataSource();
+            }
         }
 
         private void btnEditPackage_Click(object sender, EventArgs e)
         {
-
+            if (ContainsAnyData())
+            {
+                int index = dataGridViewPackages.CurrentCell.RowIndex;
+                Package package = _repository.Get(index);
+                AddEditPackageForm addUserForm = new AddEditPackageForm(_repository, _bindingSource, package, index);
+                addUserForm.Show();
+            }
         }
 
         private void btnChangeStatus_Click(object sender, EventArgs e)
         {
 
         }
+
+        private bool ContainsAnyData()
+        {
+            return _repository.GetAll().Count > 0;
+        }
+
+        private void RefreshDataSource()
+        {
+            _bindingSource.Clear();
+            _bindingSource.DataSource = _repository.GetAll().MapPackagesToViewModel();
+        }
+       
     }
 }

@@ -1,43 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Package>
-    <PackageId>124</PackageId>
+    <PackageId>244012</PackageId>
     <Status>InWarehouse</Status>
-    <DeliveryDateTime>2018-04-09T19:09:07.7704043+02:00</DeliveryDateTime>
+    <DeliveryDateTime>2018-04-11T16:01:24</DeliveryDateTime>
   </Package>
   <Package>
-    <PackageId>2443</PackageId>
-    <Status>OnTheWay</Status>
-    <DeliveryDateTime>2018-04-09T19:26:06.5913233+02:00</DeliveryDateTime>
+    <PackageId>112871</PackageId>
+    <Status>InWarehouse</Status>
+    <DeliveryDateTime>2018-04-14T16:01:34</DeliveryDateTime>
   </Package>
   <Package>
     <PackageId>238012</PackageId>
-    <Status>InSystem</Status>
-    <DeliveryDateTime>2018-04-08T19:43:24</DeliveryDateTime>
-  </Package>
-  <Package>
-    <PackageId>12345</PackageId>
-    <Status>None</Status>
-    <DeliveryDateTime>2018-04-09T19:44:07.0953703+02:00</DeliveryDateTime>
-  </Package>
-  <Package>
-    <PackageId>5554</PackageId>
     <Status>Delivered</Status>
-    <DeliveryDateTime>2018-03-27T19:46:44</DeliveryDateTime>
+    <DeliveryDateTime>2018-04-12T18:13:54</DeliveryDateTime>
   </Package>
   <Package>
-    <PackageId>5325</PackageId>
-    <Status>OnTheWay</Status>
-    <DeliveryDateTime>2018-04-14T19:55:16</DeliveryDateTime>
+    <PackageId>123098</PackageId>
+    <Status>Delivered</Status>
+    <DeliveryDateTime>2018-04-10T18:14:21.1550217+02:00</DeliveryDateTime>
   </Package>
   <Package>
-    <PackageId>123123</PackageId>
-    <Status>None</Status>
-    <DeliveryDateTime>2018-04-07T19:55:26</DeliveryDateTime>
-  </Package>
-  <Package>
-    <PackageId>799</PackageId>
+    <PackageId>981203</PackageId>
     <Status>InSystem</Status>
-    <DeliveryDateTime>2018-03-27T19:56:13</DeliveryDateTime>
+    <DeliveryDateTime>2018-04-14T18:14:36</DeliveryDateTime>
   </Package>
 </ArrayOfPackage>

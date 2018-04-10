@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kuznia.Helpers;
 using Kuznia.Models;
+using Kuznia.Models.Enums;
 using Kuznia.Repositories;
 
 namespace Kuznia
@@ -24,6 +26,7 @@ namespace Kuznia
             _repository = repository;
             _bindingSource = bindingSource;
             btnEdit.Enabled = false;
+            initComboBox();
         }
 
         public AddEditUserForm(IRepository<Client> repository, BindingSource bindingSource, Client client, int index)
@@ -33,6 +36,7 @@ namespace Kuznia
             _bindingSource = bindingSource;
             button1.Enabled = false;
             _indexToEdit = index;
+            initComboBox();
 
             FillInputsWithClientData(client);
         }
@@ -40,7 +44,7 @@ namespace Kuznia
         private void button1_Click(object sender, EventArgs e)
         {
             _repository.Add(CreateClientFromInputs());
-            _bindingSource.ResetBindings(false);
+            RefreshDataSource();
             this.Close();
         }
 
@@ -51,6 +55,7 @@ namespace Kuznia
             client.LastName = txtboxLastName.Text;
             client.City = txtboxCity.Text;
             client.Street = txtboxStreet.Text;
+            client.Status = ((KeyValuePair<PackageStatus, string>)comboBoxStatus.SelectedItem).Key;
             return client;
         }
 
@@ -65,8 +70,21 @@ namespace Kuznia
         private void btnEdit_Click(object sender, EventArgs e)
         {
             _repository.Update(_indexToEdit, CreateClientFromInputs());
-            _bindingSource.ResetBindings(false);
+            RefreshDataSource();
             this.Close();
+        }
+
+        private void RefreshDataSource()
+        {
+            _bindingSource.Clear();
+            _bindingSource.DataSource = _repository.GetAll().MapClientsToViewModel();
+        }
+
+        private void initComboBox()
+        {
+            comboBoxStatus.DataSource = new BindingSource(EnumMapper.PackageStatuses, null);
+            comboBoxStatus.DisplayMember = "Value";
+            comboBoxStatus.ValueMember = "Key";
         }
     }
 }

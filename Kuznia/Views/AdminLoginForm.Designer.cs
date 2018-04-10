@@ -39,9 +39,12 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(157, 290);
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnLogin.Location = new System.Drawing.Point(302, 399);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.Size = new System.Drawing.Size(124, 39);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Zaloguj";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -49,53 +52,58 @@
             // 
             // txtboxPassword
             // 
-            this.txtboxPassword.Location = new System.Drawing.Point(149, 219);
+            this.txtboxPassword.Location = new System.Drawing.Point(262, 308);
+            this.txtboxPassword.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtboxPassword.Name = "txtboxPassword";
             this.txtboxPassword.PasswordChar = '*';
-            this.txtboxPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtboxPassword.Size = new System.Drawing.Size(164, 30);
             this.txtboxPassword.TabIndex = 1;
             // 
             // txtboxUsername
             // 
-            this.txtboxUsername.Location = new System.Drawing.Point(149, 167);
+            this.txtboxUsername.Location = new System.Drawing.Point(262, 225);
+            this.txtboxUsername.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtboxUsername.Name = "txtboxUsername";
-            this.txtboxUsername.Size = new System.Drawing.Size(100, 20);
+            this.txtboxUsername.Size = new System.Drawing.Size(164, 30);
             this.txtboxUsername.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(90, 173);
+            this.label1.Location = new System.Drawing.Point(124, 225);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.Size = new System.Drawing.Size(60, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Login";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(93, 219);
+            this.label2.Location = new System.Drawing.Point(124, 311);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.Size = new System.Drawing.Size(62, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Hasło";
             // 
             // labelResult
             // 
             this.labelResult.AutoSize = true;
-            this.labelResult.Location = new System.Drawing.Point(93, 254);
-            this.labelResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelResult.ForeColor = System.Drawing.Color.Red;
+            this.labelResult.Location = new System.Drawing.Point(124, 360);
             this.labelResult.Name = "labelResult";
-            this.labelResult.Size = new System.Drawing.Size(35, 13);
+            this.labelResult.Size = new System.Drawing.Size(64, 25);
             this.labelResult.TabIndex = 5;
             this.labelResult.Text = "label3";
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(299, 428);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnReturn.Location = new System.Drawing.Point(465, 528);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(68, 29);
+            this.btnReturn.Size = new System.Drawing.Size(113, 50);
             this.btnReturn.TabIndex = 6;
             this.btnReturn.Text = "Powrót";
             this.btnReturn.UseVisualStyleBackColor = true;
@@ -103,9 +111,10 @@
             // 
             // AdminLoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 493);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.ClientSize = new System.Drawing.Size(601, 602);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.labelResult);
             this.Controls.Add(this.label2);
@@ -113,8 +122,11 @@
             this.Controls.Add(this.txtboxUsername);
             this.Controls.Add(this.txtboxPassword);
             this.Controls.Add(this.btnLogin);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "AdminLoginForm";
-            this.Text = "AdminLoginForm";
+            this.Text = "DPD - firma kurierska";
             this.ResumeLayout(false);
             this.PerformLayout();
 

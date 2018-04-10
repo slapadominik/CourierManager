@@ -24,6 +24,8 @@ namespace Kuznia.Views
             InitializeComponent();
             _repository = new PackageRepository(new XMLSerializer<List<Package>>("Packages.xml"));
             _bindingSource = new BindingSource();
+            labelNoPackage.Hide();
+            labelErrorId.Hide();
         }
 
         private void btnCheckStatus_Click(object sender, EventArgs e)
@@ -36,17 +38,32 @@ namespace Kuznia.Views
                 {
                     _bindingSource.DataSource = packages;
                     dataGridViewPackages.DataSource = _bindingSource;
+                    labelNoPackage.Hide();
+                    labelErrorId.Hide();
                 }
                 else
                 {
                     _bindingSource.DataSource = null;
                     dataGridViewPackages.DataSource = null;
+                    labelNoPackage.Text = "Paczka o takim numerze nie istnieje.";
+                    labelNoPackage.Show();
+                    labelErrorId.Hide();
                 }
             }
             else
             {
-
+                labelNoPackage.Hide();
+                labelErrorId.Text = "Niepoprawny format numeru paczki.";
+                labelErrorId.Show();
+                
             }
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            MenuForm menuForm = new MenuForm();
+            menuForm.Show();
+            this.Hide();
         }
     }
 }
