@@ -8,53 +8,40 @@ using Kuznia.Models;
 
 namespace Kuznia.Repositories
 {
-    class PackageRepository : IRepository<Package>
+    public class PackageRepository : IPackageRepository
     {
-        private readonly ISerializer<List<Package>> _serliazer;
+        private readonly ISerializer<List<Package>> _serializer;
         private List<Package> _packages;
 
         public PackageRepository(ISerializer<List<Package>> serializer)
         {
-            _serliazer = serializer;
-            InitializeClientsFromFile();
+            _serializer = serializer;
+            InitializePackagesFromFile();
         }
 
-        private void InitializeClientsFromFile()
+        public void Add(Package package)
         {
-            _packages = _serliazer.Deserialize();
-            if (_packages == null)
+            _packages.Add(package);
+            _serializer.Serialize(_packages);
+        }
+
+        public bool Delete(Package package)
+        {
+            Package packageToDelete = Get(package.PackageId);
+            if (_packages.Remove(packageToDelete))
             {
-                _packages = new List<Package>();
+                _serializer.Serialize(_packages);
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
-        public void Add(Package t)
+        public Package Get(int packageId)
         {
-            _packages.Add(t);
-            _serliazer.Serialize(_packages);
-        }
-
-        public void Delete(int index)
-        {
-            if (index < 0 || index > _packages.Count)
-                throw new IndexOutOfRangeException();
-            _packages.RemoveAt(index);
-            _serliazer.Serialize(_packages);
-        }
-
-        public Package Get(int index)
-        {
-            if (IndexOutOfBounds(index))
-                return null;
-            return _packages[index];
-        }
-
-        public void Update(int index, Package package)
-        {
-            if (IndexOutOfBounds(index))
-                throw new IndexOutOfRangeException();
-            _packages[index] = package;
-            _serliazer.Serialize(_packages);
+            return _packages.FirstOrDefault(x => x.PackageId == packageId);
         }
 
         public List<Package> GetAll()
@@ -62,9 +49,32 @@ namespace Kuznia.Repositories
             return _packages;
         }
 
-        private bool IndexOutOfBounds(int index)
+        public void Update(Package package)
         {
-            return (index < 0 || index > _packages.Count - 1);
+            int index = GetIndex(package);
+            if (index >= 0)
+            {
+                _packages[index] = package;
+                _serializer.Serialize(_packages);
+            }
+            else
+            {
+                throw new InvalidOperationException("Nie ma paczki o podanym Id");
+            }
+        }
+
+        private int GetIndex(Package package)
+        {
+            return _packages.FindIndex(x => x.PackageId == package.PackageId);
+        }
+
+        private void InitializePackagesFromFile()
+        {
+            _packages = _serializer.Deserialize();
+            if (_packages == null)
+            {
+                _packages = new List<Package>();
+            }
         }
     }
 }

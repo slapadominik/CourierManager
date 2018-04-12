@@ -58,9 +58,10 @@ namespace Kuznia
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            MenuForm menuForm = new MenuForm();
-            menuForm.Show();
             this.Hide();
+            MenuForm menuForm = new MenuForm();
+            menuForm.Closed += (s, args) => this.Close();
+            menuForm.Show();
         }
 
         private void btnStatus_Click(object sender, EventArgs e)
@@ -72,20 +73,6 @@ namespace Kuznia
         {
             _bindingSource.Clear();
             _bindingSource.DataSource = _repository.GetAll().MapClientsToViewModel();
-        }
-
-        protected override void WndProc(ref Message m)
-        {
-            switch (m.Msg)
-            {
-                case 0x84:
-                    base.WndProc(ref m);
-                    if ((int)m.Result == 0x1)
-                        m.Result = (IntPtr)0x2;
-                    return;
-            }
-
-            base.WndProc(ref m);
         }
 
     }

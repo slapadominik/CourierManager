@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kuznia", "Kuznia\Kuznia.csproj", "{5FB65F36-E6CC-4416-AE64-3EFFBF288FA2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KuzniaTests", "KuzniaTests\KuzniaTests.csproj", "{D6243AA3-0BB5-450B-A0E8-94C1598AD5D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5FB65F36-E6CC-4416-AE64-3EFFBF288FA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FB65F36-E6CC-4416-AE64-3EFFBF288FA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FB65F36-E6CC-4416-AE64-3EFFBF288FA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6243AA3-0BB5-450B-A0E8-94C1598AD5D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6243AA3-0BB5-450B-A0E8-94C1598AD5D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6243AA3-0BB5-450B-A0E8-94C1598AD5D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6243AA3-0BB5-450B-A0E8-94C1598AD5D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

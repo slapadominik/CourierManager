@@ -20,16 +20,18 @@ namespace Kuznia
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            MenuForm menuForm = new MenuForm();
-            menuForm.Show();
             this.Hide();
+            MenuForm menuForm = new MenuForm();
+            menuForm.Closed += (s, args) => this.Close();
+            menuForm.Show();
         }
 
         private void btnOpenCourierForm_Click(object sender, EventArgs e)
         {
-            CourierManagePackageForm courierForm = new CourierManagePackageForm();
-            courierForm.Show();
             this.Hide();
+            CourierManagePackageForm courierForm = new CourierManagePackageForm();
+            courierForm.Closed += (s, args) => this.Close();
+            courierForm.Show();
         }
     }
 }

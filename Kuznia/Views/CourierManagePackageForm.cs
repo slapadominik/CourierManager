@@ -10,21 +10,24 @@ using System.Windows.Forms;
 using Kuznia.Helpers;
 using Kuznia.Models;
 using Kuznia.Repositories;
+using Kuznia.Services;
+using Kuznia.ViewModels;
 
 namespace Kuznia.Views
 {
     public partial class CourierManagePackageForm : Form
     {
 
-        private IRepository<Package> _repository;
+        private IPackageService _packageService;
         private BindingSource _bindingSource;
 
         public CourierManagePackageForm()
         {
             InitializeComponent();
-            _repository = new PackageRepository(new XMLSerializer<List<Package>>("Packages.xml"));
+            _packageService =
+                new PackageService(new PackageRepository(new XMLSerializer<List<Package>>("Packages.xml")));
             _bindingSource = new BindingSource();
-            _bindingSource.DataSource = _repository.GetAll().MapPackagesToViewModel();
+            _bindingSource.DataSource = _packageService.GetAll().MapPackagesToViewModel();
 
             dataGridViewPackages.DataSource = _bindingSource;
         }
@@ -38,7 +41,7 @@ namespace Kuznia.Views
 
         private void btnAddPackage_Click(object sender, EventArgs e)
         {
-            AddEditPackageForm addEditPackageForm = new AddEditPackageForm(_repository, _bindingSource);
+            AddEditPackageForm addEditPackageForm = new AddEditPackageForm(_packageService, _bindingSource);
             addEditPackageForm.Show();
         }
 
@@ -46,8 +49,8 @@ namespace Kuznia.Views
         {
             if (ContainsAnyData())
             {
-                int index = dataGridViewPackages.CurrentCell.RowIndex;
-                _repository.Delete(index);
+                var package = (PackageViewModel) dataGridViewPackages.CurrentRow.DataBoundItem;
+                _packageService.Delete(package.MapPackageViewModelToModel());
                 RefreshDataSource();
             }
         }
@@ -56,27 +59,23 @@ namespace Kuznia.Views
         {
             if (ContainsAnyData())
             {
-                int index = dataGridViewPackages.CurrentCell.RowIndex;
-                Package package = _repository.Get(index);
-                AddEditPackageForm addUserForm = new AddEditPackageForm(_repository, _bindingSource, package, index);
+                var packageVieModel = (PackageViewModel)dataGridViewPackages.CurrentRow.DataBoundItem;
+                Package package = _packageService.Get(packageVieModel.PackageId);
+                AddEditPackageForm addUserForm = new AddEditPackageForm(_packageService, _bindingSource, package);
                 addUserForm.Show();
             }
         }
 
-        private void btnChangeStatus_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private bool ContainsAnyData()
         {
-            return _repository.GetAll().Count > 0;
+            return _packageService.GetAll().Count > 0;
         }
 
         private void RefreshDataSource()
         {
             _bindingSource.Clear();
-            _bindingSource.DataSource = _repository.GetAll().MapPackagesToViewModel();
+            _bindingSource.DataSource = _packageService.GetAll().MapPackagesToViewModel();
         }
        
     }

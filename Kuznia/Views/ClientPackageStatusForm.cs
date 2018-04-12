@@ -16,7 +16,7 @@ namespace Kuznia.Views
     public partial class ClientPackageStatusForm : Form
     {
 
-        private IRepository<Package> _repository;
+        private IPackageRepository _repository;
         private BindingSource _bindingSource;
 
         public ClientPackageStatusForm()
@@ -54,16 +54,16 @@ namespace Kuznia.Views
             {
                 labelNoPackage.Hide();
                 labelErrorId.Text = "Niepoprawny format numeru paczki.";
-                labelErrorId.Show();
-                
+                labelErrorId.Show();              
             }
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            MenuForm menuForm = new MenuForm();
-            menuForm.Show();
             this.Hide();
+            MenuForm menuForm = new MenuForm();
+            menuForm.Closed += (s, args) => this.Close();
+            menuForm.Show();
         }
     }
 }

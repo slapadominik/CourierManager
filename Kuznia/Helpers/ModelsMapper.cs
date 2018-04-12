@@ -21,5 +21,15 @@ namespace Kuznia.Helpers
             return clients.Select(x =>
                 new ClientViewModel() { FirstName= x.FirstName, LastName = x.LastName, City = x.City, Street = x.Street, Status = EnumMapper.MapStatus(x.Status) }).ToList();
         }
+
+        public static Package MapPackageViewModelToModel(this PackageViewModel packageViewModel)
+        {
+            return new Package()
+            {
+                PackageId = packageViewModel.PackageId,
+                Status = EnumMapper.ReverseStatuses[packageViewModel.Status],
+                DeliveryDateTime = packageViewModel.DeliveryDateTime
+            };
+        }
     }
 }

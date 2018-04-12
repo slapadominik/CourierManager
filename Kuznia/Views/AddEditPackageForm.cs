@@ -12,32 +12,33 @@ using Kuznia.Helpers;
 using Kuznia.Models;
 using Kuznia.Models.Enums;
 using Kuznia.Repositories;
+using Kuznia.Services;
 
 namespace Kuznia.Views
 {
     public partial class AddEditPackageForm : Form
     {
 
-        private IRepository<Package> _repository;
+        private IPackageService _packageService;
         private BindingSource _bindingSource;
-        private readonly int _indexToEdit; 
 
-        public AddEditPackageForm(IRepository<Package> repository, BindingSource bindingSource)
+
+        public AddEditPackageForm(IPackageService packageService, BindingSource bindingSource)
         {
             InitializeComponent();
-            _repository = repository;
+            _packageService = packageService;
             _bindingSource = bindingSource;
             btnEditPackage.Enabled = false;
             initComboBox();
         }
 
-        public AddEditPackageForm(IRepository<Package> repository, BindingSource bindingSource, Package package, int index)
+        public AddEditPackageForm(IPackageService packageService, BindingSource bindingSource, Package package)
         {
             InitializeComponent();
-            _repository = repository;
+            _packageService = packageService;
             _bindingSource = bindingSource;
-            _indexToEdit = index;
             btnAddPackage.Enabled = false;
+            txtBoxPackageId.Enabled = false;
             initComboBox();
             FillInputsWithPackageData(package);
         }
@@ -51,8 +52,8 @@ namespace Kuznia.Views
             }
             else
             {
-                _repository.Add(package);
-                _bindingSource.DataSource = _repository.GetAll().MapPackagesToViewModel();
+                _packageService.Add(package);
+                _bindingSource.DataSource = _packageService.GetAll().MapPackagesToViewModel();
                 this.Close();
             }
         }
@@ -86,8 +87,8 @@ namespace Kuznia.Views
 
         private void btnEditPackage_Click(object sender, EventArgs e)
         {
-            _repository.Update(_indexToEdit, CreatePackageFromInputs());
-            _bindingSource.DataSource = _repository.GetAll().MapPackagesToViewModel();
+            _packageService.Update(CreatePackageFromInputs());
+            _bindingSource.DataSource = _packageService.GetAll().MapPackagesToViewModel();
             this.Close();
         }
     }

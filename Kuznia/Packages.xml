@@ -2,27 +2,27 @@
 <ArrayOfPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Package>
     <PackageId>244012</PackageId>
-    <Status>InWarehouse</Status>
-    <DeliveryDateTime>2018-04-11T16:01:24</DeliveryDateTime>
-  </Package>
-  <Package>
-    <PackageId>112871</PackageId>
-    <Status>InWarehouse</Status>
-    <DeliveryDateTime>2018-04-14T16:01:34</DeliveryDateTime>
-  </Package>
-  <Package>
-    <PackageId>238012</PackageId>
     <Status>Delivered</Status>
-    <DeliveryDateTime>2018-04-12T18:13:54</DeliveryDateTime>
+    <DeliveryDateTime>2018-04-13T16:01:24</DeliveryDateTime>
   </Package>
   <Package>
-    <PackageId>123098</PackageId>
+    <PackageId>9871</PackageId>
     <Status>Delivered</Status>
-    <DeliveryDateTime>2018-04-10T18:14:21.1550217+02:00</DeliveryDateTime>
+    <DeliveryDateTime>2018-04-20T12:21:21</DeliveryDateTime>
   </Package>
   <Package>
-    <PackageId>981203</PackageId>
+    <PackageId>44123</PackageId>
+    <Status>OnTheWay</Status>
+    <DeliveryDateTime>2018-04-14T07:47:44</DeliveryDateTime>
+  </Package>
+  <Package>
+    <PackageId>772124</PackageId>
+    <Status>Delivered</Status>
+    <DeliveryDateTime>2018-04-20T08:31:32</DeliveryDateTime>
+  </Package>
+  <Package>
+    <PackageId>231455</PackageId>
     <Status>InSystem</Status>
-    <DeliveryDateTime>2018-04-14T18:14:36</DeliveryDateTime>
+    <DeliveryDateTime>2018-04-20T08:31:45</DeliveryDateTime>
   </Package>
 </ArrayOfPackage>

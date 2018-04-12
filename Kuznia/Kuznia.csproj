@@ -51,7 +51,13 @@
     <Compile Include="Helpers\ModelsMapper.cs" />
     <Compile Include="Models\Enums\PackageStatus.cs" />
     <Compile Include="Models\Package.cs" />
+    <Compile Include="Repositories\IClientRepository.cs" />
+    <Compile Include="Repositories\IPackageRepository.cs" />
     <Compile Include="Repositories\PackageRepository.cs" />
+    <Compile Include="Services\ClientService.cs" />
+    <Compile Include="Services\IClientService.cs" />
+    <Compile Include="Services\IPackageService.cs" />
+    <Compile Include="Services\PackageService.cs" />
     <Compile Include="ViewModels\ClientViewModel.cs" />
     <Compile Include="ViewModels\PackageViewModel.cs" />
     <Compile Include="Views\AddEditPackageForm.cs">
@@ -169,6 +175,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Tests\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
