@@ -19,7 +19,30 @@ namespace Kuznia.Helpers
         public static List<ClientViewModel> MapClientsToViewModel(this List<Client> clients)
         {
             return clients.Select(x =>
-                new ClientViewModel() { FirstName= x.FirstName, LastName = x.LastName, City = x.City, Street = x.Street, Status = EnumMapper.MapStatus(x.Status) }).ToList();
+                new ClientViewModel() { ClientId = x.ClientId, FirstName= x.FirstName, LastName = x.LastName, City = x.City, Street = x.Street, Status = EnumMapper.MapStatus(x.Status) }).ToList();
+        }
+
+        public static Package MapPackageViewModelToModel(this PackageViewModel packageViewModel)
+        {
+            return new Package()
+            {
+                PackageId = packageViewModel.PackageId,
+                Status = EnumMapper.ReverseStatuses[packageViewModel.Status],
+                DeliveryDateTime = packageViewModel.DeliveryDateTime
+            };
+        }
+
+        public static Client MapClientViewModelToModel(this ClientViewModel clientViewModel)
+        {
+            return new Client()
+            {
+                ClientId = clientViewModel.ClientId,
+                FirstName = clientViewModel.FirstName,
+                LastName = clientViewModel.LastName,
+                City = clientViewModel.City,
+                Street = clientViewModel.Street,
+                Status = EnumMapper.ReverseStatuses[clientViewModel.Status]
+            };
         }
     }
 }

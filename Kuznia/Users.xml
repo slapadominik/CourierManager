@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfClient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Client>
+    <ClientId>0</ClientId>
     <FirstName>Karol</FirstName>
     <LastName>Zamojski</LastName>
     <City>Poznań</City>
@@ -8,34 +9,7 @@
     <Status>Delivered</Status>
   </Client>
   <Client>
-    <FirstName>Monika</FirstName>
-    <LastName>Majec</LastName>
-    <City>Gdańsk</City>
-    <Street>Chabrowa 21c/12</Street>
-    <Status>None</Status>
-  </Client>
-  <Client>
-    <FirstName>Oskar</FirstName>
-    <LastName>Kwiatkowski</LastName>
-    <City>Wrocław</City>
-    <Street>Radkowksa 21</Street>
-    <Status>None</Status>
-  </Client>
-  <Client>
-    <FirstName>Małgorzata</FirstName>
-    <LastName>Krawiec</LastName>
-    <City>Wrocław</City>
-    <Street>Rudzka</Street>
-    <Status>OnTheWay</Status>
-  </Client>
-  <Client>
-    <FirstName>Krzysztof</FirstName>
-    <LastName>Krawczyk</LastName>
-    <City>Warszawa</City>
-    <Street>Majowa 4</Street>
-    <Status>InWarehouse</Status>
-  </Client>
-  <Client>
+    <ClientId>5</ClientId>
     <FirstName>Kamila</FirstName>
     <LastName>Stańczuk</LastName>
     <City>Wrocław</City>
@@ -43,6 +17,7 @@
     <Status>InSystem</Status>
   </Client>
   <Client>
+    <ClientId>6</ClientId>
     <FirstName>Kamil</FirstName>
     <LastName>Wojtkiewicz</LastName>
     <City>Kraków</City>
@@ -50,10 +25,27 @@
     <Status>None</Status>
   </Client>
   <Client>
-    <FirstName>Józef</FirstName>
-    <LastName>Wielki</LastName>
-    <City>Poznań</City>
-    <Street>Krakowska 38</Street>
+    <ClientId>12</ClientId>
+    <FirstName>Jan</FirstName>
+    <LastName>Bartczak</LastName>
+    <City>Wrocław</City>
+    <Street>Gajowa 17d/3</Street>
+    <Status>InSystem</Status>
+  </Client>
+  <Client>
+    <ClientId>13</ClientId>
+    <FirstName>Magdalena</FirstName>
+    <LastName>Ogórek</LastName>
+    <City>Rybnik</City>
+    <Street>Chabrowa 14c/3</Street>
+    <Status>Delivered</Status>
+  </Client>
+  <Client>
+    <ClientId>443</ClientId>
+    <FirstName>Iwona</FirstName>
+    <LastName>Stańczyk</LastName>
+    <City>Toruń</City>
+    <Street>Grzybowa 3</Street>
     <Status>None</Status>
   </Client>
 </ArrayOfClient>

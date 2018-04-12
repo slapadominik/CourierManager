@@ -19,30 +19,18 @@ namespace Kuznia.Views
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            MenuForm menuForm = new MenuForm();
-            menuForm.Show();
             this.Hide();
+            MenuForm menuForm = new MenuForm();
+            menuForm.Closed += (s, args) => this.Close();
+            menuForm.Show();
         }
 
         private void btnCheckStatusForm_Click(object sender, EventArgs e)
         {
-            ClientPackageStatusForm form= new ClientPackageStatusForm();
-            form.Show();
             this.Hide();
-        }
-
-        protected override void WndProc(ref Message m)
-        {
-            switch (m.Msg)
-            {
-                case 0x84:
-                    base.WndProc(ref m);
-                    if ((int)m.Result == 0x1)
-                        m.Result = (IntPtr)0x2;
-                    return;
-            }
-
-            base.WndProc(ref m);
+            ClientPackageStatusForm form = new ClientPackageStatusForm();
+            form.Closed += (s, args) => this.Close();
+            form.Show();
         }
     }
 }

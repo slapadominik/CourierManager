@@ -20,42 +20,28 @@ namespace Kuznia
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            AdminLoginForm adminLoginForm = new AdminLoginForm();
-            adminLoginForm.Show();
             this.Hide();
+            AdminLoginForm adminLoginForm = new AdminLoginForm();
+            adminLoginForm.Closed += (s, args) => this.Close();
+            adminLoginForm.Show();
         }
 
         private void btnCourier_Click(object sender, EventArgs e)
         {
-            CourierMenuForm courierMenuForm = new CourierMenuForm();
-            courierMenuForm.Show();
             this.Hide();
+            CourierMenuForm courierMenuForm = new CourierMenuForm();
+            courierMenuForm.Closed += (s, args) => this.Close();
+            courierMenuForm.Show();
+
         }
 
         private void btnClient_Click(object sender, EventArgs e)
         {
             this.Hide();
             ClientMenuForm clientMenuForm = new ClientMenuForm();
+            clientMenuForm.Closed += (s, args) => this.Close();
             clientMenuForm.Show();
         }
 
-        protected override void WndProc(ref Message m)
-        {
-            switch (m.Msg)
-            {
-                case 0x84:
-                    base.WndProc(ref m);
-                    if ((int)m.Result == 0x1)
-                        m.Result = (IntPtr)0x2;
-                    return;
-            }
-
-            base.WndProc(ref m);
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }

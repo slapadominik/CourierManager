@@ -10,36 +10,38 @@ using System.Windows.Forms;
 using Kuznia.Helpers;
 using Kuznia.Models;
 using Kuznia.Repositories;
+using Kuznia.Services;
+using Kuznia.ViewModels;
 
 namespace Kuznia
 {
     public partial class ManageUsersAsAdminForm : Form
     {
-        private IRepository<Client> _repository;
+        private IClientService _clientService;
         private BindingSource _bindingSource;
 
         public ManageUsersAsAdminForm()
         {
             InitializeComponent();
-            _repository = new ClientRepository(new XMLSerializer<List<Client>>("Users.xml"));
+            _clientService = new ClientService(new ClientRepository(new XMLSerializer<List<Client>>("Users.xml")));
             _bindingSource = new BindingSource();
-            _bindingSource.DataSource = _repository.GetAll().MapClientsToViewModel();
+            _bindingSource.DataSource = _clientService.GetAll().MapClientsToViewModel();
 
             usersGridView.DataSource = _bindingSource;
         }
 
         private void btnAddClient_Click(object sender, EventArgs e)
         {
-            AddEditUserForm addUserForm = new AddEditUserForm(_repository, _bindingSource);
+            AddEditUserForm addUserForm = new AddEditUserForm(_clientService, _bindingSource);
             addUserForm.Show();           
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (_repository.GetAll().Count > 0)
+            if (_clientService.GetAll().Count > 0)
             {
-                int index = usersGridView.CurrentCell.RowIndex;
-                _repository.Delete(index);
+                ClientViewModel client = (ClientViewModel) usersGridView.CurrentRow.DataBoundItem;
+                _clientService.Delete(client.MapClientViewModelToModel());
                 RefreshDataSource();
             }
             
@@ -47,45 +49,27 @@ namespace Kuznia
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (_repository.GetAll().Count > 0)
+            if (_clientService.GetAll().Count > 0)
             {
-                int index = usersGridView.CurrentCell.RowIndex;
-                Client client = _repository.Get(index);
-                AddEditUserForm addUserForm = new AddEditUserForm(_repository, _bindingSource, client, index);
+                ClientViewModel clientViewModel = (ClientViewModel) usersGridView.CurrentRow.DataBoundItem;
+                Client client = _clientService.Get(clientViewModel.ClientId);
+                AddEditUserForm addUserForm = new AddEditUserForm(_clientService, _bindingSource, client);
                 addUserForm.Show();
             }
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            MenuForm menuForm = new MenuForm();
-            menuForm.Show();
             this.Hide();
-        }
-
-        private void btnStatus_Click(object sender, EventArgs e)
-        {
-
+            MenuForm menuForm = new MenuForm();
+            menuForm.Closed += (s, args) => this.Close();
+            menuForm.Show();
         }
 
         private void RefreshDataSource()
         {
             _bindingSource.Clear();
-            _bindingSource.DataSource = _repository.GetAll().MapClientsToViewModel();
-        }
-
-        protected override void WndProc(ref Message m)
-        {
-            switch (m.Msg)
-            {
-                case 0x84:
-                    base.WndProc(ref m);
-                    if ((int)m.Result == 0x1)
-                        m.Result = (IntPtr)0x2;
-                    return;
-            }
-
-            base.WndProc(ref m);
+            _bindingSource.DataSource = _clientService.GetAll().MapClientsToViewModel();
         }
 
     }

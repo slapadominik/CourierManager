@@ -36,9 +36,10 @@ namespace Kuznia
             }
             else
             {
-                var form = new ManageUsersAsAdminForm();
-                form.Show();
                 this.Hide();
+                ManageUsersAsAdminForm form = new ManageUsersAsAdminForm();
+                form.Closed += (s, args) => this.Close();
+                form.Show();
             }
         }
 
@@ -49,9 +50,10 @@ namespace Kuznia
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            MenuForm menuForm = new MenuForm();
-            menuForm.Show();
             this.Hide();
+            MenuForm menuForm = new MenuForm();
+            menuForm.Closed += (s, args) => this.Close();
+            menuForm.Show();
         }
     }
 }

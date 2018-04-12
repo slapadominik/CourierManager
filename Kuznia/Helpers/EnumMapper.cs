@@ -18,6 +18,15 @@ namespace Kuznia.Helpers
             {PackageStatus.OnTheWay, "Wysłano"}
         };
 
+        public static Dictionary<string, PackageStatus> ReverseStatuses = new Dictionary<string, PackageStatus>()
+        {
+            {"Brak zamówień", PackageStatus.None },
+            {"Doręczono" , PackageStatus.Delivered },
+            {"Zarejestrowano", PackageStatus.InSystem},
+            {"W magazynie", PackageStatus.InWarehouse},
+            {"Wysłano", PackageStatus.OnTheWay }
+        };
+
         public static string MapStatus(PackageStatus status)
         {
             return PackageStatuses[status];
