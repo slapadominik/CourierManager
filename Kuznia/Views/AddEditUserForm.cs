@@ -11,31 +11,31 @@ using Kuznia.Helpers;
 using Kuznia.Models;
 using Kuznia.Models.Enums;
 using Kuznia.Repositories;
+using Kuznia.Services;
 
 namespace Kuznia
 {
     public partial class AddEditUserForm : Form
     {
-        private IRepository<Client> _repository;
+        private IClientService _clientService;
         private BindingSource _bindingSource;
-        private readonly int _indexToEdit;
 
-        public AddEditUserForm(IRepository<Client> repository, BindingSource bindingSource)
+        public AddEditUserForm(IClientService clientService, BindingSource bindingSource)
         {
             InitializeComponent();
-            _repository = repository;
+            _clientService = clientService;
             _bindingSource = bindingSource;
             btnEdit.Enabled = false;
             initComboBox();
         }
 
-        public AddEditUserForm(IRepository<Client> repository, BindingSource bindingSource, Client client, int index)
+        public AddEditUserForm(IClientService clientService, BindingSource bindingSource, Client client)
         {
             InitializeComponent();
-            _repository = repository;
+            _clientService = clientService;
             _bindingSource = bindingSource;
             button1.Enabled = false;
-            _indexToEdit = index;
+            txtBoxId.Enabled = false;
             initComboBox();
 
             FillInputsWithClientData(client);
@@ -43,14 +43,29 @@ namespace Kuznia
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _repository.Add(CreateClientFromInputs());
-            RefreshDataSource();
-            this.Close();
+            Client client = CreateClientFromInputs();
+            if (client == null)
+            {
+                MessageBox.Show("Pole ID Klienta musi być liczbą");
+            }
+            else
+            {
+                _clientService.Add(client);
+                RefreshDataSource();
+                this.Close();
+            }
+           
         }
 
         private Client CreateClientFromInputs()
         {
             Client client = new Client();
+            int id;
+            if (!Int32.TryParse(txtBoxId.Text, out id))
+            {
+                return null;
+            }
+            client.ClientId = id;
             client.FirstName = txtboxFirstName.Text;
             client.LastName = txtboxLastName.Text;
             client.City = txtboxCity.Text;
@@ -61,6 +76,7 @@ namespace Kuznia
 
         private void FillInputsWithClientData(Client client)
         {
+            txtBoxId.Text = client.ClientId.ToString();
             txtboxFirstName.Text = client.FirstName;
             txtboxLastName.Text = client.LastName;
             txtboxCity.Text = client.City;
@@ -69,7 +85,7 @@ namespace Kuznia
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            _repository.Update(_indexToEdit, CreateClientFromInputs());
+            _clientService.Update(CreateClientFromInputs());
             RefreshDataSource();
             this.Close();
         }
@@ -77,7 +93,7 @@ namespace Kuznia
         private void RefreshDataSource()
         {
             _bindingSource.Clear();
-            _bindingSource.DataSource = _repository.GetAll().MapClientsToViewModel();
+            _bindingSource.DataSource = _clientService.GetAll().MapClientsToViewModel();
         }
 
         private void initComboBox()

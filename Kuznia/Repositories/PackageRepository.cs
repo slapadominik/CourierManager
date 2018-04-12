@@ -41,7 +41,7 @@ namespace Kuznia.Repositories
 
         public Package Get(int packageId)
         {
-            return _packages.FirstOrDefault(x => x.PackageId == packageId);
+            return _packages.SingleOrDefault(x => x.PackageId == packageId);
         }
 
         public List<Package> GetAll()

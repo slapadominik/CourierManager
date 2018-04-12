@@ -40,43 +40,45 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtBoxId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtboxFirstName
             // 
-            this.txtboxFirstName.Location = new System.Drawing.Point(154, 51);
+            this.txtboxFirstName.Location = new System.Drawing.Point(154, 86);
             this.txtboxFirstName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtboxFirstName.Name = "txtboxFirstName";
-            this.txtboxFirstName.Size = new System.Drawing.Size(170, 30);
+            this.txtboxFirstName.Size = new System.Drawing.Size(170, 28);
             this.txtboxFirstName.TabIndex = 0;
             // 
             // txtboxLastName
             // 
-            this.txtboxLastName.Location = new System.Drawing.Point(153, 112);
+            this.txtboxLastName.Location = new System.Drawing.Point(154, 146);
             this.txtboxLastName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtboxLastName.Name = "txtboxLastName";
-            this.txtboxLastName.Size = new System.Drawing.Size(170, 30);
+            this.txtboxLastName.Size = new System.Drawing.Size(170, 28);
             this.txtboxLastName.TabIndex = 1;
             // 
             // txtboxCity
             // 
-            this.txtboxCity.Location = new System.Drawing.Point(153, 171);
+            this.txtboxCity.Location = new System.Drawing.Point(154, 205);
             this.txtboxCity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtboxCity.Name = "txtboxCity";
-            this.txtboxCity.Size = new System.Drawing.Size(170, 30);
+            this.txtboxCity.Size = new System.Drawing.Size(170, 28);
             this.txtboxCity.TabIndex = 2;
             // 
             // txtboxStreet
             // 
-            this.txtboxStreet.Location = new System.Drawing.Point(154, 235);
+            this.txtboxStreet.Location = new System.Drawing.Point(154, 265);
             this.txtboxStreet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtboxStreet.Name = "txtboxStreet";
-            this.txtboxStreet.Size = new System.Drawing.Size(170, 30);
+            this.txtboxStreet.Size = new System.Drawing.Size(170, 28);
             this.txtboxStreet.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(316, 420);
+            this.button1.Location = new System.Drawing.Point(344, 437);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(135, 42);
@@ -89,7 +91,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(31, 51);
+            this.label1.Location = new System.Drawing.Point(27, 86);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 22);
@@ -100,7 +102,7 @@
             // 
             this.Nazwisko.AutoSize = true;
             this.Nazwisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Nazwisko.Location = new System.Drawing.Point(31, 112);
+            this.Nazwisko.Location = new System.Drawing.Point(23, 146);
             this.Nazwisko.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Nazwisko.Name = "Nazwisko";
             this.Nazwisko.Size = new System.Drawing.Size(86, 22);
@@ -111,7 +113,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(31, 171);
+            this.label3.Location = new System.Drawing.Point(23, 211);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 22);
@@ -122,7 +124,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(31, 235);
+            this.label4.Location = new System.Drawing.Point(27, 271);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 22);
@@ -131,7 +133,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(316, 488);
+            this.btnEdit.Location = new System.Drawing.Point(344, 512);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(135, 43);
@@ -144,7 +146,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(31, 302);
+            this.label2.Location = new System.Drawing.Point(23, 332);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 22);
             this.label2.TabIndex = 10;
@@ -153,17 +155,35 @@
             // comboBoxStatus
             // 
             this.comboBoxStatus.FormattingEnabled = true;
-            this.comboBoxStatus.Location = new System.Drawing.Point(153, 301);
+            this.comboBoxStatus.Location = new System.Drawing.Point(154, 327);
             this.comboBoxStatus.Name = "comboBoxStatus";
-            this.comboBoxStatus.Size = new System.Drawing.Size(170, 33);
+            this.comboBoxStatus.Size = new System.Drawing.Size(170, 30);
             this.comboBoxStatus.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(27, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(87, 22);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "ID Klienta";
+            // 
+            // txtBoxId
+            // 
+            this.txtBoxId.Location = new System.Drawing.Point(154, 28);
+            this.txtBoxId.Name = "txtBoxId";
+            this.txtBoxId.Size = new System.Drawing.Size(170, 28);
+            this.txtBoxId.TabIndex = 13;
             // 
             // AddEditUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(470, 549);
+            this.ClientSize = new System.Drawing.Size(492, 578);
+            this.Controls.Add(this.txtBoxId);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBoxStatus);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnEdit);
@@ -176,7 +196,7 @@
             this.Controls.Add(this.txtboxCity);
             this.Controls.Add(this.txtboxLastName);
             this.Controls.Add(this.txtboxFirstName);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AddEditUserForm";
@@ -200,5 +220,7 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxStatus;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtBoxId;
     }
 }

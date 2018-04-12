@@ -51,7 +51,7 @@
             // btnEdit
             // 
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Location = new System.Drawing.Point(437, 96);
+            this.btnEdit.Location = new System.Drawing.Point(459, 96);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(217, 57);
@@ -63,7 +63,7 @@
             // btnDelete
             // 
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Location = new System.Drawing.Point(758, 96);
+            this.btnDelete.Location = new System.Drawing.Point(824, 96);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(198, 57);
@@ -81,14 +81,14 @@
             this.usersGridView.Location = new System.Drawing.Point(129, 186);
             this.usersGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.usersGridView.Name = "usersGridView";
-            this.usersGridView.Size = new System.Drawing.Size(827, 435);
+            this.usersGridView.Size = new System.Drawing.Size(893, 601);
             this.usersGridView.TabIndex = 3;
             // 
             // btnLogOut
             // 
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLogOut.Location = new System.Drawing.Point(827, 658);
+            this.btnLogOut.Location = new System.Drawing.Point(893, 879);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(129, 55);
             this.btnLogOut.TabIndex = 4;
@@ -101,7 +101,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(1082, 750);
+            this.ClientSize = new System.Drawing.Size(1122, 962);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.usersGridView);
             this.Controls.Add(this.btnDelete);

@@ -9,10 +9,10 @@ namespace Kuznia.Services
 {
     public interface IClientService
     {
-        void AddClient(Client client);
-        void Delete(Client client);
-        Client Get(int index);
-        void Update(int index, Client client);
+        void Add(Client client);
+        bool Delete(Client client);
+        Client Get(int clientId);
         List<Client> GetAll();
+        void Update(Client client);
     }
 }

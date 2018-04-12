@@ -10,44 +10,36 @@ namespace Kuznia.Services
 {
     public class ClientService : IClientService
     {
-        private readonly IRepository<Client> _repository;
+        private readonly IClientRepository _repository;
 
-        public ClientService(IRepository<Client> repository)
+        public ClientService(IClientRepository repository)
         {
             _repository = repository;
         }
 
-        public void AddClient(Client client)
+        public void Add(Client client)
         {
-            if (client == null)
-            {
-                throw new ArgumentException("Client mustn't be null");
-            }
             _repository.Add(client);
         }
 
-        public void Delete(Client client)
+        public bool Delete(Client client)
         {
-            if (client == null)
-            {
-                throw new ArgumentException("Client mustn't be null");
-            }
-            
+            return _repository.Delete(client);
         }
 
-        public Client Get(int index)
+        public Client Get(int clientId)
         {
-            return _repository.Get(index);
-        }
-
-        public void Update(int index, Client client)
-        {
-            
+            return _repository.Get(clientId);
         }
 
         public List<Client> GetAll()
         {
             return _repository.GetAll();
+        }
+
+        public void Update(Client client)
+        {
+            _repository.Update(client);
         }
     }
 }
